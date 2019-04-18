@@ -1,5 +1,8 @@
 package com.learning.longest_substring_without_repeating_characters;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * 无重复字符的最长子串
  *
@@ -29,8 +32,45 @@ public class LongestSubstringWithoutRepeatingCharacters {
         System.out.println(lengthOfLongestSubstring("abcabcbb"));
     }
 
-    private static int lengthOfLongestSubstring(String str) {
+    // 方法一
+    /*private static int lengthOfLongestSubstring(String str) {
+        int ans = 0;
+        for (int i = 0; i < str.length(); i++) {
+            for (int j = i + 1; j <= str.length(); j++) {
+                if (allUnique(str, i, j)) {
+                    ans = Math.max(ans, j - i);
+                }
+            }
+        }
+        return ans;
+    }
 
-        return 0;
+    private static boolean allUnique(String str, int start, int end) {
+        Set<Character> set = new HashSet<Character>();
+        for (int i = start; i < end; i++) {
+            char c = str.charAt(i);
+            if (set.contains(c)) {
+                return false;
+            }
+            set.add(c);
+        }
+        return true;
+    }*/
+
+    // 方法二
+    private static int lengthOfLongestSubstring(String str) {
+        int n = str.length();
+        int i = 0, j = 0, ans = 0;
+        Set<Character> set = new HashSet<Character>();
+        while (i < n && j < n) {
+            // 尝试增加窗口的长度
+            if (!set.contains(str.charAt(j))) {
+                set.add(str.charAt(j++));
+                ans = Math.max(ans, j - i);
+            } else {
+                set.remove(str.charAt(i++));
+            }
+        }
+        return ans;
     }
 }

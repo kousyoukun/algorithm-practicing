@@ -26,10 +26,11 @@ package com.learning.longest_substring_without_repeating_characters;
  */
 public class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String[] args) {
-
+        System.out.println(lengthOfLongestSubstring("abcabcbb"));
     }
 
     private static int lengthOfLongestSubstring(String str) {
+
         return 0;
     }
 }

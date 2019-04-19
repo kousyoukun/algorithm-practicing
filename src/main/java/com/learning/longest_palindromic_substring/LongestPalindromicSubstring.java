@@ -18,7 +18,7 @@ package com.learning.longest_palindromic_substring;
  */
 public class LongestPalindromicSubstring {
     public static void main(String[] args) {
-        System.out.println(longestPalindrome("abcabcbb"));
+        System.out.println(longestPalindrome("babad"));
     }
 
     private static String longestPalindrome(String str) {

@@ -1,7 +1,5 @@
 package com.learning.longest_palindromic_substring;
 
-import java.util.*;
-
 /**
  * 最长回文子串
  * <p>
@@ -22,30 +20,6 @@ public class LongestPalindromicSubstring {
     public static void main(String[] args) {
         System.out.println(longestPalindrome("abcabcbb"));
     }
-
-    /*private static String longestPalindrome(String str) {
-        LinkedList<Character> list = new LinkedList<Character>();
-        int n = str.length();
-        int i, j; //中心点
-        if (n % 2 != 0) {
-            int mid = n / 2;
-            i = j = mid;
-        } else {
-            int mid = n / 2;
-            i = mid - 1;
-            j = mid;
-        }
-        while (str.charAt(i) == str.charAt(j) && i >=0 && j < n) {
-            if (i == j) {
-                list.add(str.charAt(i--));
-                j++;
-            } else {
-                list.addFirst(str.charAt(i--));
-                list.addLast(str.charAt(j++));
-            }
-        }
-        return list.toString();
-    }*/
 
     private static String longestPalindrome(String str) {
         if (str == null || str.length() < 1) return "";
